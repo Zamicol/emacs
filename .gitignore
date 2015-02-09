@@ -3,3 +3,6 @@
 
 #package dir
 /elpa
+
+#eshell
+/eshell/history

@@ -60,6 +60,19 @@
 ;flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+
+;Overwrite default keyboard bindings
+(global-set-key (kbd "C-x m") 'eshell)
+
+
+
+(provide 'init)
+;;; init.el ends here
+
+
+
+
+
 (provide 'init)
 ;;; init.el ends here
 
