@@ -1,8 +1,11 @@
 #emacs files
 *~
+\#*
 
 #package dir
 /elpa
 
+
 #eshell
 /eshell/history
+/eshell/lastdir

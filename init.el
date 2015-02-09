@@ -64,13 +64,11 @@
 ;Overwrite default keyboard bindings
 (global-set-key (kbd "C-x m") 'eshell)
 
-
+::this is not working as the "current buffer"? is speedbar, not the buffer where the file is being opened.  
+(add-hook 'go-mode-hook (global-set-key (kbd "C-x f") #'gofmt))
 
 (provide 'init)
 ;;; init.el ends here
-
-
-
 
 
 (provide 'init)
