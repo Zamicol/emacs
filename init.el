@@ -93,6 +93,9 @@
 ;allows to type just y instead of yes
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;Set default tab size
+(setq default-tab-width 4)
+
 ;Overwrite default keyboard bindings
 (global-set-key (kbd "C-x m") 'eshell)
 
@@ -105,14 +108,20 @@
 
 
 ;;this is not working as the "current buffer"? is speedbar, not the buffer where the file is being opened.  
-(add-hook 'go-mode-hook (global-set-key (kbd "C-x f") #'gofmt))
+;(add-hook 'go-mode-hook 
+;	(lambda ()
+;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
+
+;silly fix
+(global-set-key (kbd "C-x f") 'gofmt)
+
+;Turn on line numbers everywhere
+(global-linum-mode t)
 
 (provide 'init)
 ;;; init.el ends here
 
 
-(provide 'init)
-;;; init.el ends here
 
 
 
