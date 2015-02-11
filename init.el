@@ -94,7 +94,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;Set default tab size
-(setq default-tab-width 4)
+(setq tab-width 4)
 
 ;Overwrite default keyboard bindings
 (global-set-key (kbd "C-x m") 'eshell)
@@ -117,6 +117,21 @@
 
 ;Turn on line numbers everywhere
 (global-linum-mode t)
+
+;;Not working experiment function
+(defun split-buffer-window()
+  (kbd "<C-x b> *SPEEDBAR* <RET>")
+  (kbd "<C-x 2>")
+  (buffer-menu))
+
+;(split-buffer-window)
+
+;; prevent silly initial splash screen
+(setq inhibit-splash-screen t)
+
+
+
+
 
 (provide 'init)
 ;;; init.el ends here
