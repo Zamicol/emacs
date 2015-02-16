@@ -75,8 +75,10 @@
 ;Turn off the tool bar
 (tool-bar-mode -1)
 
+;; prevent silly initial splash screen
+(setq inhibit-splash-screen t)
 
-;custom
+;;Custom settings
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -90,6 +92,9 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+
+;;Coding Preferences
 ;allows to type just y instead of yes
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -99,21 +104,8 @@
 ;Overwrite default keyboard bindings
 (global-set-key (kbd "C-x m") 'eshell)
 
-
-
-;;Coding Preferences
-
 ;flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-
-;;this is not working as the "current buffer"? is speedbar, not the buffer where the file is being opened.  
-;(add-hook 'go-mode-hook 
-;	(lambda ()
-;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
-
-;silly fix
-(global-set-key (kbd "C-x f") 'gofmt)
 
 ;Turn on line numbers everywhere
 (global-linum-mode t)
@@ -124,19 +116,18 @@
   (kbd "<C-x 2>")
   (buffer-menu))
 
-;(split-buffer-window)
 
-;; prevent silly initial splash screen
-(setq inhibit-splash-screen t)
 
+;;Go settings
+;run gofmt whenever via ke binding.  
+(global-set-key (kbd "C-x f") 'gofmt)
+;;this is not working as the "current buffer"? is speedbar, not the buffer where the file is being opened.  
+;(add-hook 'go-mode-hook 
+;	(lambda ()
+;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
 
 
 
 
 (provide 'init)
 ;;; init.el ends here
-
-
-
-
-
