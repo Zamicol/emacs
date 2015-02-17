@@ -46,6 +46,9 @@
 		magit
 		org
 		sr-speedbar
+		php-mode
+		web-mode
+		color-theme
 	))
 
 
@@ -65,9 +68,15 @@
 (when window-system
   (sr-speedbar-open))
 
+;(set-face-foreground 'speedbar-directory-face "#8AE234")
+
+(custom-set-faces
+  '(speedbar-directory-face ((t (:foreground "#8AE234" :weight bold)))))
+
 ;Stop speedbar from changing size on window resize
 ;(with-current-buffer sr-speedbar-buffer-name
 ;  (setq window-size-fixed 'width))
+
 
 
 
@@ -78,19 +87,20 @@
 ;; prevent silly initial splash screen
 (setq inhibit-splash-screen t)
 
-;;Custom settings
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (deeper-blue))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;Set theme using color-theme
+
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-dark-blue2)
+;(color-theme-pierson
+
+
+;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
+;(require 'color-theme)
+;(color-theme-initialize)
+;(load-file "~/.emacs.d/themes/color-theme-cobalt.el")
+;(color-theme-cobalt)
 
 
 
@@ -128,6 +138,6 @@
 
 
 
-
 (provide 'init)
 ;;; init.el ends here
+
