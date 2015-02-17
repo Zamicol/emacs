@@ -105,6 +105,11 @@
 
 
 ;;Coding Preferences
+;show matching parens
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+
 ;allows to type just y instead of yes
 (defalias 'yes-or-no-p 'y-or-n-p)
 
