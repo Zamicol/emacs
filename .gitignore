@@ -1,12 +1,15 @@
 #emacs files
 *~
 \#*
+.emacs*
 
 #package dir
 /elpa
 
 #emacs session files
 session.*
+
+
 
 #eshell
 /eshell/history
