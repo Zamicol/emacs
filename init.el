@@ -71,7 +71,7 @@
 ;(set-face-foreground 'speedbar-directory-face "#8AE234")
 
 (custom-set-faces
-  '(speedbar-directory-face ((t (:foreground "#8AE234" :weight bold)))))
+  '(speedbar-directory-face ((t (:foreground "#325E07" :weight bold)))))
 
 ;Stop speedbar from changing size on window resize
 ;(with-current-buffer sr-speedbar-buffer-name
