@@ -87,8 +87,11 @@
 ;make the cursor into a line
 (setq-default cursor-type 'bar)
 
+;Save and restore window sessions
+;(desktop-save-mode 1)
+
 ;; prevent silly initial splash screen
-(setq inhibit-splash-screen t)
+;(setq inhibit-splash-screen t)
 
 ;;Set theme using color-theme
 
