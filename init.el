@@ -147,7 +147,12 @@
 ;	(lambda ()
 ;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
 
+;Auto fmt before save
+(add-hook 'before-save-hook 'gofmt-before-save)
 
+;Remove unused imports
+(add-hook 'go-mode-hook (lambda ()
+  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
 (provide 'init)
 ;;; init.el ends here
