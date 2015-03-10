@@ -84,6 +84,9 @@
 ;Turn off the tool bar
 (tool-bar-mode -1)
 
+;make the cursor into a line
+(setq-default cursor-type 'bar)
+
 ;; prevent silly initial splash screen
 (setq inhibit-splash-screen t)
 
