@@ -71,7 +71,7 @@
 ;(set-face-foreground 'speedbar-directory-face "#8AE234")
 
 (custom-set-faces
-  '(speedbar-directory-face ((t (:foreground "#8AE234" :weight bold)))))
+  '(speedbar-directory-face ((t (:foreground "#325E07" :weight bold)))))
 
 ;Stop speedbar from changing size on window resize
 ;(with-current-buffer sr-speedbar-buffer-name
@@ -84,8 +84,14 @@
 ;Turn off the tool bar
 (tool-bar-mode -1)
 
+;make the cursor into a line
+(setq-default cursor-type 'bar)
+
+;Save and restore window sessions
+;(desktop-save-mode 1)
+
 ;; prevent silly initial splash screen
-(setq inhibit-splash-screen t)
+;(setq inhibit-splash-screen t)
 
 ;;Set theme using color-theme
 
@@ -141,7 +147,12 @@
 ;	(lambda ()
 ;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
 
+;Auto fmt before save
+(add-hook 'before-save-hook 'gofmt-before-save)
 
+;Remove unused imports
+(add-hook 'go-mode-hook (lambda ()
+  (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
 ;;Autosave session
 (desktop-save-mode 1)
