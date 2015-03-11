@@ -88,7 +88,7 @@
 (setq-default cursor-type 'bar)
 
 ;Save and restore window sessions
-;(desktop-save-mode 1)
+(desktop-save-mode 1)
 
 ;; prevent silly initial splash screen
 ;(setq inhibit-splash-screen t)
@@ -126,7 +126,8 @@
 (global-set-key (kbd "C-x m") 'eshell)
 
 ;flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;this was causing issues, commented out for now.  
+;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;Turn on line numbers everywhere
 (global-linum-mode t)
@@ -154,8 +155,6 @@
 (add-hook 'go-mode-hook (lambda ()
   (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
-;;Autosave session
-(desktop-save-mode 1)
 
 (provide 'init)
 ;;; init.el ends here
