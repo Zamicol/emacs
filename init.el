@@ -90,11 +90,13 @@
 ;Save and restore window sessions
 (desktop-save-mode 1)
 
+;When pasting, replace highlighted section instead of pasting after
+(delete-selection-mode 1)
+
 ;; prevent silly initial splash screen
 ;(setq inhibit-splash-screen t)
 
 ;;Set theme using color-theme
-
 ;(require 'color-theme)
 ;(color-theme-initialize)
 ;(color-theme-dark-blue2)
@@ -141,12 +143,6 @@
 
 
 ;;Go settings
-;run gofmt whenever via ke binding.  
-(global-set-key (kbd "C-x f") 'gofmt)
-;;this is not working as the "current buffer"? is speedbar, not the buffer where the file is being opened.  
-;(add-hook 'go-mode-hook 
-;	(lambda ()
-;		(local-set-key (kbd "C-x f") 'gofmt nil 'make-it-local)))
 
 ;Auto fmt before save
 (add-hook 'before-save-hook 'gofmt-before-save)
@@ -155,6 +151,9 @@
 (add-hook 'go-mode-hook (lambda ()
   (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
+;manual gofmt only in go mode
+(add-hook 'go-mode-hook (lambda ()
+	(local-set-key (kbd "C-x f") 'gofmt)))
 
 (provide 'init)
 ;;; init.el ends here
