@@ -64,9 +64,8 @@
 ;	sr-speedbar-max-width 40
 )
 
-;sr-speedbar on start
-(when window-system
-  (sr-speedbar-open))
+;Toggle speedbar with F12
+(global-set-key (kbd "<f12>") 'sr-speedbar-toggle)
 
 ;(set-face-foreground 'speedbar-directory-face "#8AE234")
 
@@ -89,6 +88,14 @@
 
 ;Save and restore window sessions
 (desktop-save-mode 1)
+
+
+;sr-speedbar on start
+;This causes an issue on my desktop for some reason
+;Error (frameset): Window is dedicated to `*SPEEDBAR*'
+;(when window-system
+;  (sr-speedbar-open))
+
 
 ;When pasting, replace highlighted section instead of pasting after
 (delete-selection-mode 1)
@@ -117,6 +124,11 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
+;Toggle truncate line mode
+(global-set-key (kbd "<f9>") 'toggle-truncate-lines)
+
+;No arrows on line wrap.  
+(global-visual-line-mode 1)
 
 ;allows to type just y instead of yes
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -135,10 +147,10 @@
 (global-linum-mode t)
 
 ;;Not working experiment function
-(defun split-buffer-window()
-  (kbd "<C-x b> *SPEEDBAR* <RET>")
-  (kbd "<C-x 2>")
-  (buffer-menu))
+;(defun split-buffer-window()
+;  (kbd "<C-x b> *SPEEDBAR* <RET>")
+;  (kbd "<C-x 2>")
+;  (buffer-menu))
 
 
 
