@@ -134,7 +134,20 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;Set default tab size
+(setq-default tab-width 4)
 (setq tab-width 4)
+(setq-default indent-tabs-mode t)
+
+;make tab key always call a indent command.
+(setq-default tab-always-indent t)
+
+
+;(setq default-tab-width 4)
+;(setq tab-width 4)
+;(setq-default tab-width 4)
+;(setq indent-line-function 'insert-tab)
+
+
 
 ;Overwrite default keyboard bindings
 (global-set-key (kbd "C-x m") 'eshell)
@@ -165,7 +178,7 @@
 
 ;manual gofmt only in go mode
 (add-hook 'go-mode-hook (lambda ()
-	(local-set-key (kbd "C-x f") 'gofmt)))
+(local-set-key (kbd "C-x f") 'gofmt)))
 
 (provide 'init)
 ;;; init.el ends here
