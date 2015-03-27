@@ -89,13 +89,11 @@
 ;Save and restore window sessions
 (desktop-save-mode 1)
 
-
 ;sr-speedbar on start
 ;This causes an issue on my desktop for some reason
 ;Error (frameset): Window is dedicated to `*SPEEDBAR*'
 ;(when window-system
 ;  (sr-speedbar-open))
-
 
 ;When pasting, replace highlighted section instead of pasting after
 (delete-selection-mode 1)
@@ -109,7 +107,6 @@
 ;(color-theme-dark-blue2)
 ;(color-theme-pierson
 
-
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;(require 'color-theme)
@@ -117,6 +114,11 @@
 ;(load-file "~/.emacs.d/themes/color-theme-cobalt.el")
 ;(color-theme-cobalt)
 
+
+(cua-mode t)
+    (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+    (transient-mark-mode 1) ;; No region when it is not highlighted
+    (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
 
 ;;Coding Preferences
